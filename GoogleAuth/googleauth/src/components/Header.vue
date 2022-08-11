@@ -17,11 +17,13 @@
       <div class="dropdown">
         <router-link
           to=""
-          class="display-content mr-3 align-baseline pb-4 h-9 text-sm text-gray-500 hover:text-black/75 hover:border hover:border-x-0 hover:border-t-0 hover:border-b-4 hover:border-black/50 focus:text-black focus:border focus:border-x-0 focus:border-t-0 focus:border-b-4 focus:border-black"
-          >Products<i class="fa fa-caret-down ml-2" aria-hidden="true"></i
-        ></router-link>
+          class="display-content mr-3 align-baseline pb-5 h-9 text-sm text-gray-500 hover:text-black/75 hover:border hover:border-x-0 hover:border-t-0 hover:border-b-4 hover:border-black/50 focus:text-black focus:border focus:border-x-0 focus:border-t-0 focus:border-b-4 focus:border-black"
+          >Products
+          <!-- <i class="fa fa-caret-up ml-2" aria-hidden="true"></i> -->
+          <i class="fa fa-caret-down ml-2" aria-hidden="true"></i>
+        </router-link>
         <div
-          class="dropdown-content absolute flex w-1/2 bg-white mt-5 border p-4 text-black text-sm border-gray-300 shadow-xl rounded"
+          class="dropdown-content absolute flex w-1/2 bg-white mt-5 border p-4 text-black text-sm border-gray-200 shadow-xl rounded"
         >
           <div class="basis-1/3">
             <p class="pt-1 pb-4 font-semibold">Develop</p>
@@ -113,11 +115,22 @@
         class="mr-3 ml-4 mt-2 h-9 text-sm text-gray-500 hover:text-black/75 hover:border hover:border-x-0 hover:border-t-0 hover:border-b-4 hover:border-black/50 focus:text-black focus:border focus:border-x-0 focus:border-t-0 focus:border-b-4 focus:border-black"
         >Blog</router-link
       >
-      <router-link
-        to=""
-        class="ml-4 mr-10 mt-2 h-9 text-sm text-gray-500 hover:text-black/75 hover:border hover:border-x-0 hover:border-t-0 hover:border-b-4 hover:border-black/50 focus:text-black focus:border focus:border-x-0 focus:border-t-0 focus:border-b-4 focus:border-black"
-        >More<i class="fa fa-caret-down ml-2" aria-hidden="true"></i
-      ></router-link>
+      <div class="dropdown-two">
+        <router-link
+          to=""
+          class="ml-4 mr-10 pb-5 mt-2 h-9 text-sm text-gray-500 hover:text-black/75 hover:border hover:border-x-0 hover:border-t-0 hover:border-b-4 hover:border-black/50 focus:text-black focus:border focus:border-x-0 focus:border-t-0 focus:border-b-4 focus:border-black"
+          >More<i class="fa fa-caret-down ml-2" aria-hidden="true"></i
+        ></router-link>
+        <div
+          class="display-two absolute bg-white border border-gray-200 mt-5 pt-6 pl-3 pr-3 h-20 shadow-2 shadow-xl rounded"
+        >
+          <p class="text-black">
+            <router-link to="" class="hover:text-gray-500"
+              >Developer Communities</router-link
+            >
+          </p>
+        </div>
+      </div>
       <i class="fa fa-search ml-20 mt-3" aria-hidden="true"></i>
       <input
         class="w-40 bg-gray-200 rouded mr-5 text-sm focus:outline-none"
@@ -129,34 +142,107 @@
       >
         English
       </button>
-      <button
-        class="ml-5 rounded-full border w-10 text-gray-500 hover:bg-gray-200 focus:bg-gray-200 hover:text-black focus:text-black"
-      >
-        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-      </button>
-      <div class="rounded-full w-10 ml-5 overflow-hidden">
-        <img
-          src="./../assets/profile.jpg"
-          alt="Profile Pic"
-          class="w-full h-full object-cover"
-        />
+      <div class="options-dropdown relative">
+        <button
+          class="relative z-10 ml-5 rounded-full h-11 border w-11 text-gray-500 hover:bg-gray-200 focus:bg-gray-200 hover:text-black focus:text-black"
+          @click="showDropdown"
+        >
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+        </button>
+        <button
+          class="fixed inset-0 bg-gray-100 opacity-25 cursor-default"
+          v-if="showOptions"
+          @click="showOptions = !showOptions"
+        ></button>
+        <div
+          class="options-container absolute right-0 pt-4 pb-2 rounded border border-gray-200 bg-white shadow shadow-xl"
+          v-if="showOptions"
+        >
+          <p class="mb-4 pl-3 uppercase text-xs pr-10">Google Developer Profile</p>
+          <button
+            class="w-full text-left pl-3 pb-4 pt-4 w-full text-sm hover:bg-gray-200"
+          >
+            <router-link to="">Dashboard</router-link>
+          </button>
+          <button class="w-full text-left pl-3 pb-4 pt-4 text-sm hover:bg-gray-200">
+            <router-link to="" class="">Saved Pages</router-link>
+          </button>
+          <button class="w-full text-left pl-3 pb-4 pt-4 text-sm hover:bg-gray-200">
+            <router-link to="">Profile</router-link>
+          </button>
+        </div>
+      </div>
+      <div class="signout-dropdown">
+        <div
+          class="rounded-full h-11 pb-5 w-11 ml-5 overflow-hidden border-2 border-white hover:border-2 hover:border-blue-400 hover:opacity-50 hover:shadow-2 hover:shadow-2xl"
+        >
+          <button>
+            <img
+              src="./../assets/profile.jpg"
+              alt="Profile Pic"
+              class="w-full h-full object-cover"
+            />
+          </button>
+        </div>
+        <div
+          class="absolute signout-content border border-gray-200 pt-4 pb-4 px-4 right-5 bg-white shadow-2 shadow-xl"
+        >
+          <p class="hover:text-gray-400"><router-link to="">Sign Out</router-link></p>
+        </div>
       </div>
     </nav>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      showOptions: false,
+    };
+  },
+  methods: {
+    showDropdown() {
+      this.showOptions = !this.showOptions;
+    },
+  },
+};
 </script>
 
-<style>
+<style scoped>
 .dropdown-content {
+  /* height: 0px; */
   display: none;
+  transition: height 2s;
 }
+/* bg-white mt-5 border p-4 text-black text-sm border-gray-200 shadow-xl rounded */
 .dropdown:hover .dropdown-content {
   display: flex;
+  /* height: 420px;
+  background-color: white;
+  margin-top: 5px;
+  border: 1px solid gray;
+  transition: height 2s; */
 }
 .display-content:focus .dropdown-content {
   display: flex;
+}
+.display-content {
+  margin-top: 4px !important;
+}
+.display-two {
+  display: none;
+}
+.dropdown-two:hover .display-two {
+  display: flex;
+}
+.signout-content {
+  display: none;
+}
+.signout-dropdown:hover .signout-content {
+  display: block;
+}
+.options-container {
+  width: 250px;
 }
 </style>
