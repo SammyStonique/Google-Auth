@@ -187,7 +187,9 @@
         <div
           class="absolute signout-content border border-gray-200 pt-4 pb-4 px-4 right-5 bg-white shadow-2 shadow-xl"
         >
-          <p class="hover:text-gray-400"><router-link to="">Sign Out</router-link></p>
+          <p class="hover:text-gray-400">
+            <router-link to="/login">Sign Out</router-link>
+          </p>
         </div>
       </div>
     </nav>
