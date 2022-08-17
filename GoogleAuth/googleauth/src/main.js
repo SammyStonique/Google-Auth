@@ -11,4 +11,4 @@ import './index.css'
 
 axios.defaults.baseURL = 'http://127.0.0.1:8000/'
 
-createApp(App).use(store).use(router).use(VueToast).use(VueAxios, axios).use(IdleVue, {store,idleTime: 10000}).mount('#app')
+createApp(App).use(store).use(router).use(VueToast).use(VueAxios, axios).use(IdleVue, {store,idleTime: 1800000}).mount('#app')

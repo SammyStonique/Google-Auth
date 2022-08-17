@@ -38,6 +38,7 @@ class User(AbstractBaseUser,PermissionsMixin):
     COUNTY = (('','Select County'),('Kisumu','Kisumu'),('Nairobi','Nairobi'),('Mombasa','Mombasa'),('Siaya','Siaya'))
     
     id = models.AutoField(primary_key=True)
+    # username= models.CharField(max_length=250, unique=True)
     email = models.EmailField(_('email_address'), unique=True)
     first_name = models.CharField(max_length=250,blank=True)
     last_name = models.CharField(max_length=250,blank=True)
@@ -48,7 +49,7 @@ class User(AbstractBaseUser,PermissionsMixin):
     county = models.CharField(max_length=250,choices=COUNTY,default='',blank=True)
     address = models.CharField(max_length=250,blank=True)
     is_staff = models.BooleanField(default= False)
-    is_active = models.BooleanField(default= False)
+    is_active = models.BooleanField(default= True)
     start_date = models.DateTimeField(auto_now_add=True)
 
     objects = CustomAccountManager()

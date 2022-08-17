@@ -10,12 +10,12 @@ export default {
     };
   },
   beforeMount() {
-    const token = this.$store.state.access_token;
-    if (token) {
-      axios.defaults.headers.common["Authorization"] = "Bearer " + token;
-    } else {
-      axios.defaults.headers.common["Authorization"] = "";
-    }
+    // const token = this.$store.state.access_token;
+    // if (token) {
+    //   axios.defaults.headers.common["Authorization"] = "Bearer " + token;
+    // } else {
+    //   axios.defaults.headers.common["Authorization"] = "";
+    // }
   },
   methods: {
     currentUser() {

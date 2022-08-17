@@ -57,14 +57,14 @@ export default {
         password: this.password,
       };
       await this.axios
-        .post("api/v1/jwt/create/", formData)
+        .post("api/v1/token/", formData)
         .then((response) => {
           console.log(response.data);
           const a_token = response.data.access;
           const r_token = response.data.refresh;
           this.$store.commit("setAccessToken", a_token);
           this.$store.commit("setRefreshToken", r_token);
-          axios.defaults.headers.common["Authorization"] = "Token" + a_token;
+          axios.defaults.headers.common["Authorization"] = "Bearer " + a_token;
           localStorage.setItem("access_token", a_token);
           localStorage.setItem("refresh_token", r_token);
           this.$toast.success("Login Succesful", {
@@ -72,6 +72,7 @@ export default {
             position: "top",
           });
           this.$router.push("/");
+          this.$store.commit("reloadingPage");
         })
         .catch((error) => {
           console.log(error);

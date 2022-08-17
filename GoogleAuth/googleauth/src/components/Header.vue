@@ -1,10 +1,10 @@
 <template>
   <div>
     <nav
-      class="h-12 border border-b-1 border-gray-300 flex pt-1 pb-1 border-x-0 border-t-0"
+      class="h-12 border border-b-1 border-gray-300 flex pt-1 pb-1 border-x-0 border-t-0 dark:bg-slate-800"
     >
       <div class="mx-2 flex-initial select-none">
-        <router-link to="" class="ml-5 mr-10">
+        <router-link to="/" class="ml-5 mr-10">
           <small class="text-3xl text-blue-500 font-normal">G</small
           ><small class="text-2xl text-red-400 font-normal">o</small
           ><small class="text-2xl text-yellow-400 font-normal">o</small
@@ -14,6 +14,11 @@
           <small class="text-2xl text-gray-500">Developers</small>
         </router-link>
       </div>
+      <router-link
+        to=""
+        class="mr-3 ml-4 mt-2 h-9 text-sm text-gray-500 hover:text-black/75 hover:border hover:border-x-0 hover:border-t-0 hover:border-b-4 hover:border-black/50 focus:text-black focus:border focus:border-x-0 focus:border-t-0 focus:border-b-4 focus:border-black"
+        >Events</router-link
+      >
       <div class="dropdown">
         <router-link
           to=""
@@ -23,7 +28,7 @@
           <i class="fa fa-caret-down ml-2" aria-hidden="true"></i>
         </router-link>
         <div
-          class="dropdown-content absolute flex w-1/2 bg-white mt-5 border p-4 text-black text-sm border-gray-200 shadow-xl rounded"
+          class="dropdown-content absolute flex z-50 w-1/2 bg-white mt-5 border p-4 text-black text-sm border-gray-200 shadow-xl rounded"
         >
           <div class="basis-1/3">
             <p class="pt-1 pb-4 font-semibold">Develop</p>
@@ -98,11 +103,6 @@
       <router-link
         to=""
         class="mr-3 ml-4 mt-2 h-9 text-sm text-gray-500 hover:text-black/75 hover:border hover:border-x-0 hover:border-t-0 hover:border-b-4 hover:border-black/50 focus:text-black focus:border focus:border-x-0 focus:border-t-0 focus:border-b-4 focus:border-black"
-        >Events</router-link
-      >
-      <router-link
-        to=""
-        class="mr-3 ml-4 mt-2 h-9 text-sm text-gray-500 hover:text-black/75 hover:border hover:border-x-0 hover:border-t-0 hover:border-b-4 hover:border-black/50 focus:text-black focus:border focus:border-x-0 focus:border-t-0 focus:border-b-4 focus:border-black"
         >Learn</router-link
       >
       <router-link
@@ -111,7 +111,7 @@
         >Developer Profile</router-link
       >
       <router-link
-        to=""
+        to="/blog"
         class="mr-3 ml-4 mt-2 h-9 text-sm text-gray-500 hover:text-black/75 hover:border hover:border-x-0 hover:border-t-0 hover:border-b-4 hover:border-black/50 focus:text-black focus:border focus:border-x-0 focus:border-t-0 focus:border-b-4 focus:border-black"
         >Blog</router-link
       >
