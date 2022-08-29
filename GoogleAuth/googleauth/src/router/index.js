@@ -4,6 +4,7 @@ import HomeView from '../views/HomeView.vue'
 import LoginView from '../views/LoginView.vue'
 import RegisterView from '../views/RegisterView.vue'
 import BlogView from '../views/BlogView.vue'
+import LearnView from '../views/LearnView.vue'
 
 const routes = [
   {
@@ -30,6 +31,11 @@ const routes = [
     name: 'blog',
     component: BlogView
   },
+  {
+    path: '/learn',
+    name: 'learn',
+    component: LearnView
+  },
 ]
 
 const router = createRouter({
@@ -49,7 +55,7 @@ router.beforeResolve((to, from, next) => {
   if (to.name) {
     // Start the route progress bar.
     NProgress.start()
-    NProgress.configure({ easing: 'ease', speed: 1000 , height:'4px' });
+    NProgress.configure({ easing: 'ease', speed: 2000 , height:'4px' });
   }
   next()
 })

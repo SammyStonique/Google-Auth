@@ -10,6 +10,7 @@
           type="text"
           placeholder="Email"
           v-model="email"
+          autofocus
         />
         <br />
         <input
